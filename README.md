@@ -1,14 +1,19 @@
-# Edge Startpage
+# Edge Start Page
 
-![Edge Startpage Screenshot](https://ucarecdn.com/21d9b036-7aa8-4b34-a004-fb0ab47720e7/edgestartpage.png)
-**Edge Startpage** is a customizable start page for your Microsoft Edge browser, designed to provide quick access to bookmarks, display the current date and time, and include social media, developer tools, and other utilities. This project uses HTML, CSS, and JavaScript for functionality.
+A customizable, developer-themed browser start page that resembles a terminal/command-line interface. This start page features a typing effect greeting, real-time date and time display, and organized bookmarks in a JSON-like format.
+
+![Edge Start Page Preview](screenshot.png)
 
 ## Features
 
-- Customizable categories for bookmarks (Social Media, Dev, Google, Fun, Others)
-- Displays current date and time dynamically
-- Personal greeting message
-- Favicon support
+- 🖥️ **Terminal Interface**: Authentic terminal window design with command prompts
+- ⌨️ **Typing Effect**: Dynamic greeting with a blinking cursor and typing animation
+- 🕒 **Real-time Clock**: Live updating date and time in terminal format
+- 📊 **JSON-style Bookmarks**: Links organized in a clean, code-like JSON structure
+- 🎨 **Dracula Theme**: Popular dark code editor color scheme
+- 📱 **Responsive Design**: Works on all screen sizes
+- 🔤 **Developer Fonts**: Uses popular coding fonts (JetBrains Mono, Fira Code)
+- ✨ **Visual Effects**: Subtle terminal scan lines and CRT flicker effects
 
 ## Installation
 
@@ -16,7 +21,6 @@
 
 ```bash
 git clone https://github.com/handikatriarlan/edge-startpage.git
-cd edge-startpage
 ```
 
 ### 2. Set Up for Microsoft Edge
@@ -27,33 +31,85 @@ cd edge-startpage
 - Click on Load unpacked.
 - Select the folder where you cloned the project (`edge-startpage`).
 
-## Project Structure
-
-```bash
-edge-startpage/
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── images/
-│   │   ├── favicon.png
-│   │   └── rest.webp
-│   ├── js/
-│   │   └── script.js
-├── index.html
-├── LICENSE
-├── manifest.json
-└── README.md
-```
-
 ## Customization
 
-- **Bookmarks**: Update bookmarks in the `index.html` file under the appropriate category.
-- **Appearance**: Modify `assets/css/style.css` to change the appearance of the start page.
-- **Favicon**: Replace the `favicon.png` in `assets/image/` to use your own favicon.
+### Changing Links
 
-## Contributing
+Edit the links in the `index.html` file. Each category follows this format:
 
-Feel free to open an issue or submit a pull request if you encounter any problems or have suggestions for new features.
+```html
+<div class="json-category">
+  <div class="json-key">"categoryName"</div>
+  : {
+  <div class="json-links">
+    <a href="https://example.com/">"linkName"</a>
+  </div>
+  },
+</div>
+```
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+### Changing Colors The color scheme is defined in CSS variables at the top of
+
+the `style.css` file:
+
+```css
+:root {
+  --bg-color: #1e1e2e;
+  --terminal-bg: #282a36;
+  --terminal-header: #191a21;
+  --text-color: #f8f8f2;
+  --prompt-color: #50fa7b;
+  --command-color: #8be9fd;
+  --key-color: #ff79c6;
+  --value-color: #f1fa8c;
+  --link-color: #bd93f9;
+  --link-hover: #ff79c6;
+  --cursor-color: #f8f8f2;
+  --comment-color: #6272a4;
+}
+```
+
+Modify these values to change the color scheme.
+
+### Changing the Image/GIF
+
+Replace the GIF URL in the `index.html` file:
+
+```html
+<img src="YOUR_NEW_IMAGE_URL_HERE" alt="Profile Image" />
+```
+
+```html
+<img src="your-image.gif" alt="Profile Image" />
+```
+
+### Modifying the Typing Effect
+
+Adjust the typing speed in the `script.js` file:
+
+```javascript
+const typingSpeed = 100
+```
+
+Lower values make typing faster, higher values make it slower.
+
+## Browser Compatibility
+
+- Edge: Full support
+- Chrome: Full support
+- Firefox: Full support
+- Safari: Full support
+- Opera: Full support
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Google Fonts (JetBrains Mono, Fira Code)
+
+## Acknowledgments
+
+- Dracula Theme color palette
+- JetBrains Mono and Fira Code fonts
+- Inspiration from terminal interfaces and code editors
