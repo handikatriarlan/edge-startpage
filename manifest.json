@@ -3,11 +3,6 @@
 	"name": "Edge Startpage",
 	"version": "1.0",
 	"description": "A custom startpage for my Edge browser.",
-	"icons": {
-		"16": "assets/images/favicon.ico",
-		"48": "assets/images/favicon.ico",
-		"64": "assets/images/favicon.ico"
-	},
 	"chrome_url_overrides": {
 		"newtab": "index.html"
 	},
@@ -19,9 +14,6 @@
 	},
 	"web_accessible_resources": [
 		{
-			"resources": [
-				"assets/images/favicon.ico"
-			],
 			"matches": [
 				"<all_urls>"
 			]

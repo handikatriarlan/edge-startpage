@@ -3,85 +3,137 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>New Tab</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <script defer src="assets/js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arlan@dev-home</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Fira+Code:wght@300;400;500;600&display=swap">
 </head>
 
-<body style="text-align: center">
+<body>
     <div class="container">
-        <div class="left-container">
-            <h1 id="dateDisplay"></h1>
-            <div class="gif">
-                <img class='vapor' src="assets/images/rest.webp" width="450px" height="400px" />
-            </div>
-            <h1 id="timeDisplay"></h1>
-        </div>
-
-        <div class="right-container">
-            <div class="head">
-                <p>&gt Hello, Arlan!<span class="blinking">_</span></p>
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-button close"></span>
+                    <span class="terminal-button minimize"></span>
+                    <span class="terminal-button maximize"></span>
+                </div>
+                <div class="terminal-title">arlan@dev-home:~</div>
             </div>
 
-            <div class="bookmarks">
-                <div class="category">
-                    <div class="links">
-                        <li class="title" style="color: #7564d4">Social Media</li>
-                        <li><a href="https://twitter.com/">Twitter</a></li>
-                        <li><a href="https://www.facebook.com/">Facebook</a></li>
-                        <li><a href="https://instagram.com/">Instagram</a></li>
-                        <li><a href="https://linkedin.com">LinkedIn</a></li>
-                        <li><a href="https://web.telegram.org/">Telegram</a></li>
-                    </div>
-                </div>
+            <div class="terminal-body">
+                <div class="terminal-content">
+                    <div class="profile-section">
+                        <div class="command-line">
+                            <span class="prompt">$</span>
+                            <span class="command">./welcome.sh</span>
+                        </div>
 
-                <div class="category">
-                    <div class="links">
-                        <li class="title" style="color: #d57b6d">Dev</li>
-                        <li><a href="https://github.com/">GitHub</a></li>
-                        <li><a href="https://chat.openai.com/">ChatGPT</a></li>
-                        <li><a href="https://vercel.com/">Vercel</a></li>
-                        <li><a href="https://dash.cloudflare.com/">Cloudflare</a></li>
-                        <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
-                    </div>
-                </div>
+                        <div class="output-section">
+                            <div class="image-container">
+                                <img src="soulja-boy-pepe.gif" alt="Space GIF">
+                            </div>
 
-                <div class="category">
-                    <div class="links">
-                        <li class="title" style="color: #EADBB2">Google</li>
-                        <li><a href="https://drive.google.com/">Drive</a></li>
-                        <li><a href="https://www.youtube.com/">Youtube</a></li>
-                        <li><a href="https://mail.google.com/">Gmail</a></li>
-                        <li><a href="https://cloud.google.com/">Cloud</a></li>
-                        <li><a href="https://scholar.google.com/">Scholar</a></li>
-                    </div>
-                </div>
+                            <div class="user-info">
+                                <div class="greeting-line">
+                                    <span class="prompt">&gt;</span>
+                                    <span id="greeting">Good evening, Arlan!</span>
+                                    <span class="cursor" id="cursor">_</span>
+                                </div>
 
-                <div class="category">
-                    <div class="links">
-                        <li class="title" style="color: #b8f1b2">Fun</li>
-                        <li><a href="https://dramaday.me/">Dramaday</a></li>
-                        <li><a href="https://avistaz.to/torrents?in=1&search=&type=0&tags=&uploader=&language%5B%5D=91">Avistaz</a></li>
-                        <li><a href="https://tokopedia.com/">Tokopedia</a></li>
-                        <li><a href="https://weverse.io/">Weverse</a></li>
-                        <li><a href="https://medium.com/">Medium</a></li>
-                    </div>
-                </div>
+                                <div class="datetime-container">
+                                    <div class="output">
+                                        <span id="date"></span>
+                                        <span id="time"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="category">
-                    <div class="links">
-                        <li class="title" style="color: #d99ae9">Others</li>
-                        <li><a href="https://www.speedtest.net/">Speedtest</a></li>
-                        <li><a href="https://last.fm/">Last.fm</a></li>
-                        <li><a href="https://letterboxd.com/">Letterboxd</a></li>
-                        <li><a href="https://www.deepl.com/">DeepL</a></li>
-                        <li><a href="https://papago.naver.com/">Papago</a></li>
+                        <div class="command-line">
+                            <span class="prompt">$</span>
+                            <span class="command">cat bookmarks.json</span>
+                        </div>
+
+                        <div class="links-section">
+                            <div class="json-start">{</div>
+
+                            <div class="json-category">
+                                <div class="json-key">"socialMedia"</div>: {
+                                <div class="json-links">
+                                    <a href="https://twitter.com/">"twitter"</a>,
+                                    <a href="https://www.facebook.com/">"facebook"</a>,
+                                    <a href="https://instagram.com/">"instagram"</a>,
+                                    <a href="https://linkedin.com">"linkedin"</a>,
+                                    <a href="https://web.telegram.org/">"telegram"</a>
+                                </div>
+                                },
+                            </div>
+
+                            <div class="json-category">
+                                <div class="json-key">"dev"</div>: {
+                                <div class="json-links">
+                                    <a href="https://github.com/">"github"</a>,
+                                    <a href="https://chat.openai.com/">"chatGPT"</a>,
+                                    <a href="https://vercel.com/">"vercel"</a>,
+                                    <a href="https://dash.cloudflare.com/">"cloudflare"</a>,
+                                    <a href="https://stackoverflow.com/">"stackoverflow"</a>
+                                </div>
+                                },
+                            </div>
+
+                            <div class="json-category">
+                                <div class="json-key">"google"</div>: {
+                                <div class="json-links">
+                                    <a href="https://drive.google.com/">"drive"</a>,
+                                    <a href="https://www.youtube.com/">"youtube"</a>,
+                                    <a href="https://mail.google.com/">"gmail"</a>,
+                                    <a href="https://cloud.google.com/">"cloud"</a>,
+                                    <a href="https://scholar.google.com/">"scholar"</a>
+                                </div>
+                                },
+                            </div>
+
+                            <div class="json-category">
+                                <div class="json-key">"fun"</div>: {
+                                <div class="json-links">
+                                    <a href="https://dramaday.me/">"dramaday"</a>,
+                                    <a href="https://avistaz.to/">"avistaz"</a>,
+                                    <a href="https://tokopedia.com/">"tokopedia"</a>,
+                                    <a href="https://weverse.io/">"weverse"</a>,
+                                    <a href="https://medium.com/">"medium"</a>
+                                </div>
+                                },
+                            </div>
+
+                            <div class="json-category">
+                                <div class="json-key">"others"</div>: {
+                                <div class="json-links">
+                                    <a href="https://www.speedtest.net/">"speedtest"</a>,
+                                    <a href="https://last.fm/">"lastfm"</a>,
+                                    <a href="https://letterboxd.com/">"letterboxd"</a>,
+                                    <a href="https://www.deepl.com/">"deepl"</a>,
+                                    <a href="https://papago.naver.com/">"papago"</a>
+                                </div>
+                                }
+                            </div>
+
+                            <div class="json-end">}</div>
+                        </div>
+
+                        <div class="command-line waiting">
+                            <span class="prompt">$</span>
+                            <span class="cursor-static">_</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
