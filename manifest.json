@@ -2,7 +2,12 @@
 	"manifest_version": 3,
 	"name": "Edge Startpage",
 	"version": "1.0",
-	"description": "A custom startpage for my Edge browser.",
+	"description": "A customizable, developer-themed browser start page that resembles a terminal/command-line interface. This start page features a typing effect greeting, real-time date and time display, and organized bookmarks in a JSON-like format.",
+	"icons": {
+		"16": "favicon.ico",
+		"48": "favicon.ico",
+		"64": "favicon.ico"
+	},
 	"chrome_url_overrides": {
 		"newtab": "index.html"
 	},
@@ -14,6 +19,9 @@
 	},
 	"web_accessible_resources": [
 		{
+			"resources": [
+				"favicon.ico"
+			],
 			"matches": [
 				"<all_urls>"
 			]
