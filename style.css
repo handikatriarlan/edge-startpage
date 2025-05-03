@@ -250,7 +250,7 @@ body {
   margin-left: 40px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
 }
 
 .json-links a {
