@@ -33,12 +33,17 @@ function updateDateTime() {
     window.currentGreeting = greeting;
 }
 
+let isTyping = false;
+
 function typeGreeting() {
+    if (isTyping) return;
+
     const greetingElement = document.getElementById('greeting');
     const greeting = window.currentGreeting || "Good day, Arlan";
     const typingSpeed = 100;
 
     let i = 0;
+    isTyping = true;
     greetingElement.textContent = "";
 
     function type() {
@@ -46,6 +51,8 @@ function typeGreeting() {
             greetingElement.textContent += greeting.charAt(i);
             i++;
             setTimeout(type, typingSpeed);
+        } else {
+            isTyping = false; // Reset setelah selesai ngetik
         }
     }
 
@@ -60,9 +67,11 @@ function initPage() {
     setInterval(updateDateTime, 1000);
 
     setInterval(() => {
-        const greetingElement = document.getElementById('greeting');
-        greetingElement.textContent = "";
-        setTimeout(typeGreeting, 500);
+        if (!isTyping) {
+            const greetingElement = document.getElementById('greeting');
+            greetingElement.textContent = "";
+            setTimeout(typeGreeting, 500);
+        }
     }, 30000);
 }
 
